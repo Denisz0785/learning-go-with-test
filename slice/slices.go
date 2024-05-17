@@ -22,3 +22,15 @@ func SumAll(src1 ...[]int) []int {
 	}
 	return sums
 }
+
+func SumTails(src ...[]int) (sums []int) {
+	for _, v := range src {
+		if len(v) == 0 {
+			sums = append(sums, 0)
+		} else {
+			tail := v[1:]
+			sums = append(sums, SumAll(tail)...)
+		}
+	}
+	return sums
+}
