@@ -1,7 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"net/http"
+	"test_to_learn_go/injiection"
 )
 
 const (
@@ -32,7 +34,12 @@ func greetingsPrefix(language string) (prefix string) {
 	}
 	return
 }
+func GreetingsHandler(w http.ResponseWriter, r *http.Request) {
+	injiection.Greet(w, "world!")
+}
 
 func main() {
-	fmt.Println(Hello("Denis", "French"))
+
+	log.Fatal(http.ListenAndServe(":3333", http.HandlerFunc(GreetingsHandler)))
+
 }
