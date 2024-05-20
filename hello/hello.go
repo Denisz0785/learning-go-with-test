@@ -1,9 +1,11 @@
 package main
 
 import (
-	"log"
 	"net/http"
+	"os"
 	"test_to_learn_go/injiection"
+	"test_to_learn_go/mocking"
+	"time"
 )
 
 const (
@@ -39,7 +41,8 @@ func GreetingsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	sleeper := mocking.ConfigurableSleeper{1 * time.Second, time.Sleep}
 
-	log.Fatal(http.ListenAndServe(":3334", http.HandlerFunc(GreetingsHandler)))
+	mocking.CountDown(os.Stdout, &sleeper)
 
 }
