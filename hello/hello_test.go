@@ -26,11 +26,10 @@ func TestHello(t *testing.T) {
 	})
 }
 
-
 func assertMessage(t testing.TB, got, want string) {
 	t.Helper()
-	
+
 	if got != want {
-		t.Errorf("got %s, want %s", got, want)
+		t.Errorf("got %s, expected %s", got, want)
 	}
 }
