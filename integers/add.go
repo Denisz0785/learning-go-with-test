@@ -1,7 +1,7 @@
 package integers
 
-// Add return sum of a and b
+// Add return sum of a and c
 
-func Add(a, b int) int {
-	return a + b
+func Add(a, c int) int {
+	return a + c
 }
