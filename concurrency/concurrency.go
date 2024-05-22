@@ -1,5 +1,7 @@
 package concurrency
 
+import "fmt"
+
 type WebSiteChecker func(string) bool
 
 type res struct {
@@ -23,4 +25,8 @@ func CheckWebSite(wc WebSiteChecker, urls []string) map[string]bool {
 	}
 	close(resultChannel)
 	return result
+}
+
+func Hello() {
+	fmt.Println("Hello")
 }
