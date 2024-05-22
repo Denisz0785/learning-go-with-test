@@ -29,4 +29,5 @@ func CheckWebSite(wc WebSiteChecker, urls []string) map[string]bool {
 
 func Hello() {
 	fmt.Println("Hello")
+	fmt.Println("Good Luck")
 }
