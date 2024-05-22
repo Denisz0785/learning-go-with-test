@@ -37,7 +37,7 @@ func greetingsPrefix(language string) (prefix string) {
 	return
 }
 func GreetingsHandler(w http.ResponseWriter, r *http.Request) {
-	injiection.Greet(w, "my World!")
+	injiection.Greet(w, "my beauty World!")
 }
 
 func main() {
